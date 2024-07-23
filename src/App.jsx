@@ -25,12 +25,21 @@ function Header() {
   );
 }
 
-function CoreConcept(props) {
+// function CoreConcept(props) {
+//   return (
+//     <li>
+//       <img src={props.img} alt={props.title} />
+//       <h3>{props.title}</h3>
+//       <p>{props.description}</p>
+//     </li>
+//   );
+// }
+function CoreConcept({ image, title, description }) {
   return (
     <li>
-      <img src={props.img} alt={props.title} />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
     </li>
   );
 }
@@ -48,17 +57,21 @@ function App() {
               <CoreConcept
                 title="components"
                 description="The core UI building block."
-                img={compoentsImg}
+                image={compoentsImg}
               />
               {/* Second CoreConcept component using values from the CORE_CONCEPTS array */}
               <CoreConcept
                 title={CORE_CONCEPTS[1].title}
                 description={CORE_CONCEPTS[1].description}
-                img={CORE_CONCEPTS[1].image}
+                image={CORE_CONCEPTS[1].image}
               />
-               {/* Third CoreConcept component using spread operator to pass all properties from the second item in the CORE_CONCEPTS array */}
+              {/* Third CoreConcept component using spread operator to pass all properties from the second item in the CORE_CONCEPTS array */}
               <CoreConcept {...CORE_CONCEPTS[1]} />
-            
+              <CoreConcept {...CORE_CONCEPTS[2]} />
+            </ul>
+            {/* Rendering CoreConcept components dynamically from CORE_CONCEPTS array */}
+            <ul>
+              {CORE_CONCEPTS.map((item,index)=><CoreConcept {...CORE_CONCEPTS[index]} key={index}/>)}
             </ul>
           </section>
           <h2>Time to get started!</h2>
