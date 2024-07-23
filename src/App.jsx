@@ -1,5 +1,6 @@
 import reactImg from "./assets/react-core-concepts.png";
-import compoentsImg from './assets/components.png'
+import compoentsImg from "./assets/components.png";
+import { CORE_CONCEPTS } from "./data";
 // Array of descriptions related to React
 const reactDescriptions = ["Fundamental", "Cricial", "Core"];
 // Function to generate a random integer between 0 and max
@@ -43,14 +44,21 @@ function App() {
           <section id="core-concepts">
             <h2>Core Conceps</h2>
             <ul>
+              {/* First CoreConcept component with hardcoded values */}
               <CoreConcept
                 title="components"
                 description="The core UI building block."
                 img={compoentsImg}
               />
-              <CoreConcept />
-              <CoreConcept />
-              <CoreConcept />
+              {/* Second CoreConcept component using values from the CORE_CONCEPTS array */}
+              <CoreConcept
+                title={CORE_CONCEPTS[1].title}
+                description={CORE_CONCEPTS[1].description}
+                img={CORE_CONCEPTS[1].image}
+              />
+               {/* Third CoreConcept component using spread operator to pass all properties from the second item in the CORE_CONCEPTS array */}
+              <CoreConcept {...CORE_CONCEPTS[1]} />
+            
             </ul>
           </section>
           <h2>Time to get started!</h2>
