@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+// Importing the CSS file for styling the components
 import './App.css'
-
+// Array of descriptions related to React
 const reactDescriptions = ['Fundamental', 'Cricial', 'Core'];
+// Function to generate a random integer between 0 and max 
 function genRandomInt (max) {
   return Math.floor(Math.random() * (max + 1))
 }
-
+// Header component definition
 function Header(){
   return (
     <header>
@@ -19,7 +21,7 @@ function Header(){
     </header>
   )
 }
-
+// Main App component definition
 function App() {
   const [count, setCount] = useState(0)
 
