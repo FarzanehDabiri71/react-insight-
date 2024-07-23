@@ -1,4 +1,5 @@
 import reactImg from "./assets/react-core-concepts.png";
+import compoentsImg from './assets/components.png'
 // Array of descriptions related to React
 const reactDescriptions = ["Fundamental", "Cricial", "Core"];
 // Function to generate a random integer between 0 and max
@@ -23,7 +24,15 @@ function Header() {
   );
 }
 
-
+function CoreConcept(props) {
+  return (
+    <li>
+      <img src={props.img} alt={props.title} />
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
+    </li>
+  );
+}
 // Main App component definition
 function App() {
   return (
@@ -31,6 +40,19 @@ function App() {
       <div>
         <Header />
         <main>
+          <section id="core-concepts">
+            <h2>Core Conceps</h2>
+            <ul>
+              <CoreConcept
+                title="components"
+                description="The core UI building block."
+                img={compoentsImg}
+              />
+              <CoreConcept />
+              <CoreConcept />
+              <CoreConcept />
+            </ul>
+          </section>
           <h2>Time to get started!</h2>
         </main>
       </div>
