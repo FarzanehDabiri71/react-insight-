@@ -27,6 +27,7 @@ export default function Examples() {
     <>
       <Section title={"Examples"} id="examples">
         <Tabs
+          ButtonsConatainer={'menu'}
           buttons={
             <>
               <TabButton
